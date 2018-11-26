@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2018 at 10:36 AM
+-- Generation Time: Nov 26, 2018 at 06:54 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `department` varchar(250) NOT NULL,
   `semesters` int(11) NOT NULL,
   `status` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `courses`
@@ -43,7 +43,8 @@ INSERT INTO `courses` (`id`, `course_name`, `department`, `semesters`, `status`)
 (2, 'BSIT', 'Computer Science', 8, 'active'),
 (3, 'MSCS', 'Computer Science', 4, 'active'),
 (4, 'MSIT', 'Computer Science', 4, 'unactive'),
-(5, 'BSPhy', 'Physics', 8, 'active');
+(5, 'BSPhy', 'Physics', 8, 'active'),
+(6, 'BSCS', 'Computer Science', 8, 'active');
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `marks` (
   `min_marks` int(200) NOT NULL,
   `obtain_marks` int(200) NOT NULL,
   `status` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `marks`
@@ -92,7 +93,15 @@ INSERT INTO `marks` (`marks_id`, `student_id`, `subject`, `semester`, `total_mar
 (1, 1, 'English', '1', 100, 50, 59, 'active'),
 (2, 1, 'Basic Electronics ', '1', 100, 50, 78, 'active'),
 (3, 1, 'Programming Fundamentals ', '1', 100, 50, 68, 'active'),
-(4, 1, 'Intro- Computer Science', '1', 100, 50, 98, 'active');
+(4, 1, 'Intro- Computer Science', '1', 100, 50, 98, 'active'),
+(5, 4, 'English', '1', 100, 50, 10, 'active'),
+(6, 4, 'Basic Electronics ', '1', 100, 50, 10, 'active'),
+(7, 4, 'Programming Fundamentals ', '1', 100, 50, 10, 'active'),
+(8, 4, 'Intro- Computer Science', '1', 100, 50, 10, 'active'),
+(9, 4, 'English', '1', 100, 50, 50, 'active'),
+(10, 4, 'Basic Electronics ', '1', 100, 50, 50, 'active'),
+(11, 4, 'Programming Fundamentals ', '1', 100, 50, 50, 'active'),
+(12, 4, 'Intro- Computer Science', '1', 100, 50, 50, 'active');
 
 -- --------------------------------------------------------
 
@@ -131,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `students` (
   `semester` varchar(200) NOT NULL,
   `roll_no` varchar(200) NOT NULL,
   `status` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `students`
@@ -139,7 +148,8 @@ CREATE TABLE IF NOT EXISTS `students` (
 
 INSERT INTO `students` (`id`, `name`, `fathers_name`, `surname`, `department`, `class`, `semester`, `roll_no`, `status`) VALUES
 (1, 'Sooraj', 'Ghulam Asghar', 'Abbasi', 'Computer Science', 'BSCS', '1', 'CS-15-47', 'active'),
-(3, 'Sarmad ', 'Ghulam Asghar Abbasi', 'Abbasi', 'Physics', 'BSPhy', '1', 'PHY-15-47', 'active');
+(3, 'Sarmad ', 'Ghulam Asghar Abbasi', 'Abbasi', 'Physics', 'BSPhy', '1', 'PHY-15-47', 'active'),
+(4, 'Sajid', 'Hussain', 'Gopang', 'Computer Science', 'BSCS', '1', 'CS-15-41', 'active');
 
 -- --------------------------------------------------------
 
@@ -188,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `email`, `contact_no`, `status`) VALUES
-(1, 'admin', '123', 'admin@gmail.com', '03473381735', 'active');
+(1, 'admin', '123', 'admin@gmail.com', '0000000000', 'active');
 
 --
 -- Indexes for dumped tables
@@ -244,7 +254,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `departments`
 --
@@ -254,7 +264,7 @@ MODIFY `department_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `marks`
 --
 ALTER TABLE `marks`
-MODIFY `marks_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `marks_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `news`
 --
@@ -264,7 +274,7 @@ MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `subjects`
 --
