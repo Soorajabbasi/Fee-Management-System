@@ -67,6 +67,7 @@
 					<form class="form-inline" style="margin-left: 160px;" action="result.php" method="post">
 		  				<div class="form-check mb-2 mr-sm-2 ">
 		    				<select class="form-control" name="dept">
+		    					<option>Select Department</option>
 		    						<?php
 											$sql="SELECT *FROM departments WHERE status='active'";
 											$result=mysqli_query($con,$sql);

@@ -51,6 +51,7 @@ if(isset($_POST['submit']))
                           <div class="form-group col-md-4">
                               <label for="inputEmail4">Select Department</label>
                               <select class='form-control' name="department_name" id="course_name">
+                                <option>Select Department</option>
                                 <?php
                                   $values = array('status' =>"active");
                                     $students=$admin->select_param("SELECT * FROM departments WHERE status=:status",$values);
