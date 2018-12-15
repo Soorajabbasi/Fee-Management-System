@@ -24,36 +24,18 @@ if(isset($_POST['submit']))
                         <!-- Forms-1 -->
                         <div class="outer-w3-agile col-xl mt-3 mr-xl-3">
                             <h4 class="tittle-w3-agileits mb-4">All Courses</h4>
-                            <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Course Name</th>
-                                <th scope="col">Department Name</th>
-                                <th scope="col">No of Semesters</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $values = array('status' => "active", );
-                                $students=$admin->select_param("SELECT * FROM courses WHERE status=:status",$values);
-                                $i=1;
-                                foreach($students as $row)
-                                {
-                                    echo"
-                                    <tr>
-                                        <th scope='row'>$i</th>
-                                        <td>". $row['course_name'] ."</td>
-                                        <td>". $row['department'] ."</td>
-                                        <td>". $row['semesters'] ."</td>
-                                        <td><a class='btn btn-link btn-sm ' href='link-handler.php?value=".$row['id']."&action=Delete&page-name=courses.php'>Delete</a></td>
-                                    </tr>";
-                                    $i++;
-                                }
-                            ?>
-                        </tbody>
-                    </table>
+                            <label for="inputEmail4">Select Department</label>
+                            <select class='form-control' name="department_name" id="department_2">
+                              <?php
+                                $values = array('status' =>"active");
+                                  $students=$admin->select_param("SELECT * FROM departments WHERE status=:status",$values);
+                                  foreach ($students as $row ){
+                                    echo "<option value='".$row['department_name']."'>".$row['department_name']. "</option>";
+                                  }
+                              ?>
+                            </select>
+                            <div id="result_by_ajax_3"></div>
+                        
                         </div>
                         <!--// Forms-1 -->
                         <!-- Forms-2 -->
@@ -62,7 +44,7 @@ if(isset($_POST['submit']))
                             <form action="#" method="post">
                             <div class="form-group">
                                     <label for="exampleFormControlInput1">Department Name: </label>
-                                    <select class='form-control' name="department_name">
+                                    <select class='form-control' name="department_name" >
                                       <?php
                                         $values = array('status' =>"active");
                                           $students=$admin->select_param("SELECT * FROM departments WHERE status=:status",$values);

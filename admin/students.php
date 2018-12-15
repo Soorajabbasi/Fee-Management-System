@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
                         <div class="form-row">
                           <div class="form-group col-md-4">
                               <label for="inputEmail4">Select Department</label>
-                              <select class='form-control' name="department_name">
+                              <select class='form-control' name="department_name" id="course_name">
                                 <?php
                                   $values = array('status' =>"active");
                                     $students=$admin->select_param("SELECT * FROM departments WHERE status=:status",$values);
@@ -62,13 +62,15 @@ if(isset($_POST['submit']))
                           </div>
                             <div class="form-group col-md-4">
                                 <label for="inputEmail4">Select Course</label>
-                                <select class='form-control' name="course_name">
+                                <select class='form-control' id="options" name="course_name">
+                                  <option >Select Course</option>
                                   <?php
-                                    $values = array('status' =>"active");
-                                      $students=$admin->select_param("SELECT * FROM courses WHERE status=:status",$values);
-                                      foreach ($students as $row ){
-                                        echo "<option value='".$row['course_name']."'>".$row['course_name']. "</option>";
-                                      }
+
+                                    //$values = array('status' =>"active");
+                                      //$students=$admin->select_param("SELECT * FROM courses WHERE status=:status",$values);
+                                      //foreach ($students as $row ){
+                                      //  echo "<option value='".$row['course_name']."'>".$row['course_name']. "</option>";
+                                     // }
                                   ?>
                                 </select>
 

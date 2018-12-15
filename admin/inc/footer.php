@@ -45,7 +45,23 @@
                     alert('Error');
                 }
             });
-          });
+        });
+          $("#department_2").change(function () {
+            //alert($('#department_2').find(":selected").val());
+             $.ajax({
+                type: 'POST',
+                url: 'ajax_view_3.php',
+                data: {selectedType: $('#department_2').find(":selected").val() },
+                dataType: 'html',
+                success: function(data){
+                    $('#result_by_ajax_3').html(data);
+                },
+                error: function ()
+                {
+                    alert('Error');
+                }
+            });
+        });
           $("#c_name").change(function () {
             //alert($('#c_name').find(":selected").val());
              $.ajax({
@@ -55,6 +71,22 @@
                 dataType: 'html',
                 success: function(data){
                     $('#result_by_ajax_2').html(data);
+                },
+                error: function ()
+                {
+                    alert('Error');
+                }
+            });
+          });
+          $("#course_name").change(function () {
+            //alert($('#c_name').find(":selected").val());
+             $.ajax({
+                type: 'POST',
+                url: 'ajax_select.php',
+                data: {selectedType: $('#course_name').find(":selected").val() },
+                dataType: 'html',
+                success: function(data){
+                    $('#options').html(data);
                 },
                 error: function ()
                 {
