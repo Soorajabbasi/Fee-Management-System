@@ -26,4 +26,4 @@ Fees management System is simple web based application for collage and universit
 ### Developer
    *Sooraj Abbasi*
    *CEO of theBitmatrix* 
-   [theBitmatrix.com](http://thebitmatrix.com)
+   [theBitmatrix.com](http://thebitmatrix.net)
